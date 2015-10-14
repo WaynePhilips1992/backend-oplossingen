@@ -1,58 +1,73 @@
 <!doctype html>
 <?php 
-    $i = 1;
-    $getallen = "";
-    $getallen2 = "";
+$i = 1;
+$getallen = "";
+$getallen2 = "";
 
-    while($i <=100){
-        $getallen = $getallen.$i.", ";
-        if($i % 3 == 0 && $i > 40 && $i < 80){
-            $getallen2 = $getallen2.$i.", ";
-        }
-        $i++;
-    }    
+while($i <=100){
+    $getallen = $getallen.$i.", ";
+    if($i % 3 == 0 && $i > 40 && $i < 80){
+        $getallen2 = $getallen2.$i.", ";
+    }
+    $i++;
+}    
 
+$boodschappenlijstje = array("koeken","soep","gehaktballen","tampons","een nieuwe vriendin");
+$i = 0;
+while($i < count($boodschappenlijstje)){
+    if($i == 0){
+        $tekst = "<ul>";        
+    }
+    $tekst = $tekst."<li>".$boodschappenlijstje[$i]."</li>";
+
+    if($i == count($boodschappenlijstje)-1){
+        $tekst = $tekst."</ul>";
+    }
+    $i++;
+}
 ?>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Opdracht while</title>
-        <link rel="stylesheet" href="http://web-backend.local/css/global.css">
-        <link rel="stylesheet" href="http://web-backend.local/css/facade.css">
-        <link rel="stylesheet" href="http://web-backend.local/css/directory.css">
-    </head>
-    <body class="web-backend-opdracht">
-        
-        <section class="body">  
-        
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Opdracht while</title>
+    <link rel="stylesheet" href="http://web-backend.local/css/global.css">
+    <link rel="stylesheet" href="http://web-backend.local/css/facade.css">
+    <link rel="stylesheet" href="http://web-backend.local/css/directory.css">
+</head>
+<body class="web-backend-opdracht">
+
+    <section class="body">  
+
         <h1>Opdracht while: deel 1</h1>
 
         <ul>
 
             <li>Druk alle getallen af van 0 tot 100 afgescheiden door een komma en 
-            een spatie ' , '.</li>
+                een spatie ' , '.</li>
 
-            <li>Op een volgende lijn druk je alle getallen af die deelbaar zijn door 3 én groter zijn dan 40 mààr kleiner zijn dan 80.</li>
+                <li>Op een volgende lijn druk je alle getallen af die deelbaar zijn door 3 én groter zijn dan 40 mààr kleiner zijn dan 80.</li>
 
-        </ul>
+            </ul>
 
-        Getallen: <?php echo $getallen ?><br/>
-        Getallen 2 : <?php echo $getallen2 ?>
+            Getallen: <?php echo $getallen ?><br/>
+            Getallen 2 : <?php echo $getallen2 ?>
 
 
 
-        <h1>Opdracht while: deel 2</h1>
+            <h1>Opdracht while: deel 2</h1>
 
-        <ul>
-             <li>Maak een array <code>$boodschappenlijstje</code> en plaats hierin enkele boodschapjes.</li>
+            <ul>
+               <li>Maak een array <code>$boodschappenlijstje</code> en plaats hierin enkele boodschapjes.</li>
 
-            <li>Print deze boodschappen af in het HTML-gedeelte en plaats ze in <code>&lt;li&gt;</code>-elementen. Al deze <code>&lt;li&gt;</code>-elementen staan op hun beurt weer in één <code>&lt;ul&gt;</code>.</li>
+               <li>Print deze boodschappen af in het HTML-gedeelte en plaats ze in <code>&lt;li&gt;</code>-elementen. Al deze <code>&lt;li&gt;</code>-elementen staan op hun beurt weer in één <code>&lt;ul&gt;</code>.</li>
 
-            <li>Valideer je code met de <a href="http://validator.w3.org/">W3 Validator</a>. Dit doe je door de source-code van je document te bekijken <kbd>ctrl + u</kbd> / <kbd>⌘-Option-U</kbd>, deze te kopiëren en te plakken in de "direct input" tab.</li>
+               <li>Valideer je code met de <a href="http://validator.w3.org/">W3 Validator</a>. Dit doe je door de source-code van je document te bekijken <kbd>ctrl + u</kbd> / <kbd>⌘-Option-U</kbd>, deze te kopiëren en te plakken in de "direct input" tab.</li>
 
-            <li>Als je code niet geldig is, maak je de nodige wijzigingen.</li>
-        </ul>
+               <li>Als je code niet geldig is, maak je de nodige wijzigingen.</li>
+           </ul>
 
-    </body>
-</html>
+           <?php echo $tekst ?>
+       </section>
+   </body>
+   </html>
